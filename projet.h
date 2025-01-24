@@ -1,5 +1,5 @@
-#ifndef projet.h
-#define projet.h
+#ifndef PROJET
+#define PROJET
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,14 +7,16 @@
 #include <conio.h>
 #include <string.h>
 
-void afficherPaysage(FILE *fichier, int positionJoueur);
-
 typedef struct {
     int positionX;
     int positionY;
     int saut;
     int enjeu;
 } Personnage;
+
+void caracterePaysage(char caractereActuel);
+
+void afficherPaysage(FILE *fichier, int positionJoueur);
 
 void cacherCurseur();
 
