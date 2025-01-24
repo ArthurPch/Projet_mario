@@ -1,18 +1,5 @@
 #include "projet.h"
 
-void menu() {
-    printf("+---------------------------------------------+");
-    printf("\n|     Bienvenue sur le meilleur jeu Mario     |\n");
-    printf("|                                             |\n");  
-    printf("|                   - Menu -                  |\n");  
-    printf("|                                             |\n");  
-    printf("|                  1. Jouer                   |\n");  
-    printf("|                  2. Score                   |\n");  
-    printf("|                  3. Quitter                 |\n"); 
-    printf("+---------------------------------------------+\n");
-    printf("Choisissez une option : ");
-}
-
 void caracterePaysage(char caractereActuel) {
     switch (caractereActuel) {
         case 'w':
@@ -50,5 +37,40 @@ void afficherPaysage(FILE *fichier, int positionJoueur) {
             }
         }
         printf("\n"); 
+    }
+}
+
+void menu(*fichier, positionJoueur) {
+    int choix;
+    
+
+    printf("+---------------------------------------------+");
+    printf("\n|     Bienvenue sur le meilleur jeu Mario     |\n");
+    printf("|                                             |\n");  
+    printf("|                   - Menu -                  |\n");  
+    printf("|                                             |\n");  
+    printf("|                  1. Jouer                   |\n");  
+    printf("|                  2. Score                   |\n");  
+    printf("|                  3. Quitter                 |\n"); 
+    printf("+---------------------------------------------+\n");
+    printf("Choisissez une option : ");
+    scanf("%d",&choix);
+    switch (choix) 
+    {
+    case 1:
+        afficherPaysage(*fichier, positionJoueur); // Remplacer par la fonction jouer
+        break;
+
+    case 2:
+        // Mettre la fonction du score ici
+        break;
+
+    case 3:
+        break;
+
+    default:
+        printf("Choix invalide, veuillez réessayer\n");
+        menu();
+        break;
     }
 }
